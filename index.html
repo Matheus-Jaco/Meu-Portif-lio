@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Meu Portifólio</title>
+    <title>Portifólio de Matheus Jacó</title>
 </head>
 <body>
     <header class="cabeçalho">
@@ -12,8 +12,8 @@
         <nav>
             <ul>
                 <li><a href="https://github.com/Matheus-Jaco" target="_blank"><ion-icon name="logo-github" class="btn-iocons"></ion-icon></a></li>
-                <li><a href="https://www.linkedin.com/in/matheus-jac%C3%B3-256961340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><ion-icon name="logo-linkedin" class="btn-iocons"></ion-icon></a></li>
-                <li><a href="https://www.instagram.com/matheus_jaco_01/?hl=pt-br" target="_blank"><ion-icon name="logo-instagram" class="btn-iocons"></ion-icon></a></li>
+                <li><a href="https://www.linkedin.com/in/matheus-jac%C3%B3-256961340" target="_blank"><ion-icon name="logo-linkedin" class="btn-iocons"></ion-icon></a></li>
+                <li><a href="https://www.instagram.com/matheus_jaco_01" target="_blank"><ion-icon name="logo-instagram" class="btn-iocons"></ion-icon></a></li>
             </ul>
         </nav>
     </header>
@@ -23,50 +23,81 @@
 
     <section class="intro">
         <section class="imagem">
-            <img src="img/Imagem do WhatsApp de 2025-06-03 à(s) 13.45.35_28d42997.jpg" />
+            <img class="zoom-img" src="img/foto.jpg" />
         </section>
-        <h1>
-            Olá, me chamo Matheus Jacó!
-        </h1>
-        <h3>
-            Sou estudante de Desenvolvimento de Sistemas
-        </h3>
+        <h1 class="typewriter" style="--chars:27; --typing-duration:6s">Olá, me chamo Matheus Jacó!</h1>
+        <h3>Sou estudante de Desenvolvimento de Sistemas</h3>
         <p>Estudo para criar soluções digitáis com foco em performance, acessibilidade e design moderno.</p>
     </section>
 
     <section class="sobre">
-        <h2>Sobre mim</h2>
-        <p>
-            Sou um estudante apaixonado por tecnologia, com experiência em HTML, CSS e Python.
-            Sou apaixonado por inovação e soluções criativas. Atualmente, estou me aprofundando em desenvolvimento web, com foco em HTML, CSS e JavaScript e frameworks como React. Gosto de aprender na prática, participando de projetos, desafios e contribuindo com ideias que agreguem valor real. Estou sempre em busca de evolução, seja aprendendo  novas linguagens, explorando boas práticas de código ou entendendo  mais  sobre UX/UI. Meu objetivo é crescer como desenvolvedor e contribuir com projetos que transformem a vida das  pessoas por meio da tecnologia.
-
-        </p>
+        <h2 class="fixed-title">Sobre mim</h2>
+        <div class="card">
+            <p>
+                Sou estudante de tecnologia, com experiência em HTML, CSS e Python. Sou apaixonado por inovação e soluções criativas. Atualmente, estou me aprofundando em desenvolvimento web, com foco em HTML, CSS, JavaScript, Python e frameworks como Django. Gosto de aprender na prática, participando de projetos, desafios e contribuindo com ideias que agreguem valor real. Estou sempre em busca de evolução, seja aprendendo novas linguagens, explorando boas práticas de código ou entendendo mais sobre UX/UI. Meu objetivo é crescer como desenvolvedor e contribuir com projetos que transformem a vida das pessoas por meio da tecnologia.
+            </p>
+        </div>
     </section>
 
     <section class="projetos">
         <h2>Meus Projetos</h2>
         <div class="grid-projetos">
             <div class="card">
-                <a href="https://matheus-jaco.github.io/Meu-portfolio/" target="_blank"><h3>Site de Portifólio</h3></a>
+                <img class="project-img zoom-img" src="img/potifolio.png" alt="Site de Portfólio">
+                <a href="https://github.com/Matheus-Jaco/Meu-portf-lio" target="_blank"><h3>Site de Portfólio</h3></a>
                 <p>Um site responsivo feito com HTML e CSS.</p>
             </div>
 
             <div class="card">
-                <a href="https://github.com/Matheus-Jaco/Automa-o-para-produtos" target="_blank"><h3>Automação para auxílio de tarefas.</h3></a>
-                <p>Automação para ajudar no prenchimento de dados de uma empresa.</p>
+                <img class="project-img zoom-img" src="img/automacao.png" alt="Automação de Tarefas">
+                <a href="https://github.com/Matheus-Jaco/Automa-o-para-produtos" target="_blank"><h3>Automação para auxílio de tarefas</h3></a>
+                <p>Automação para ajudar no preenchimento de dados de uma empresa.</p>
             </div>
 
             <div class="card">
-                <a href="https://github.com/Matheus-Jaco/controle-de-estoque" target="_blank"><h3>Banco de Dados para controle de estoque</h3></a>
-                <p>Banco de Dados para controle de estoque e vendas de uma loja de peças automobilísticas.</p>
+                <img class="project-img zoom-img" src="img/banco.png" alt="Controle de Estoque">
+                <a href="https://github.com/Matheus-Jaco/Controle-de-estoque" target="_blank"><h3>Banco de Dados para controle de estoque</h3></a>
+                <p>Controle de estoque e vendas para loja de peças automobilísticas.</p>
             </div>
         </div>
     </section>
 
     <section class="contato">
         <h2>E-mail</h2>
-        <p>Entre em contato pelo e-mail: <a href="https://mail.google.com/mail/u/0/?hl=pt-BR#inbox" target="_blank">jacomatheus0@gmail.com</a></p>
+        <p>Entre em contato pelo e-mail: 
+            <a href="mailto:jacomatheus0@gmail.com">jacomatheus0@gmail.com</a>
+        </p>
     </section>
+
+    <!-- 🔥 CONTAINER DA IMAGEM AMPLIADA -->
+    <div class="imagem-ampliada" id="zoomContainer">
+        <img id="zoomImg" src="">
+    </div>
+
+    <script>
+        // Lightbox para ampliar imagens ao clicar
+        document.querySelectorAll(".zoom-img").forEach(img => {
+            img.addEventListener("click", function () {
+                document.getElementById("zoomImg").src = this.src;
+                document.getElementById("zoomContainer").style.display = "flex";
+            });
+        });
+
+        document.getElementById("zoomContainer").addEventListener("click", function () {
+            this.style.display = "none";
+        });
+
+        // Ajuste automático da máquina de escrever
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.typewriter').forEach(function (el) {
+                var text = el.textContent.trim();
+                var chars = text.length || 1;
+                var full = el.scrollWidth || el.getBoundingClientRect().width || 0;
+                el.style.setProperty('--chars', chars);
+                el.style.setProperty('--full-width', full + 'px');
+            });
+        });
+    </script>
 
 </body>
 </html>

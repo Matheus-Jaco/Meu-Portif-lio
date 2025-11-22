@@ -4,14 +4,46 @@
     box-sizing: border-box;
 }
 
+.typewriter{
+    --chars: 12;
+    --typing-duration: 6s;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .12em solid currentColor;
+    font-family: inherit;
+    font-weight: 600;
+    animation: typing var(--typing-duration) steps(var(--chars), end) infinite, caret .8s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing{
+    0%   { width: 0; }
+    45%  { width: calc(var(--chars) * 1ch); }
+    65%  { width: calc(var(--chars) * 1ch); }
+    100% { width: 0; }
+}
+
+@keyframes caret{
+    50% { border-color: transparent; }
+}
+
+.typewriter.large{ font-size: 2rem; }
+
 body{
     font-family: "Segoe UI", sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #13293d;
     color: #000000;
 }
 
 .nome:hover{
+    color: purple;
+    font-size: 45px;
+    transition: 1s;
+}
+
+.email:hover{
     color: purple;
     font-size: 45px;
     transition: 1s;
@@ -29,15 +61,35 @@ ion-icon {
     transition: 0.5s;
 }
 
-.imagem{
+/* 🔥 AQUI: IMAGEM CENTRALIZADA SEM ALTERAR O RESTO */
+.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
 }
 
-.imagem > img {
+.imagem img {
+    display: block;
+    margin: 0 auto;
     border-radius: 8px;
-    
+    max-width: 250px; /* Ajustável */
+}
+
+/* 🔥 FIXAÇÃO DAS IMAGENS APENAS NO SEU CAMPO */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
+    cursor: pointer;
+}
+
+/* 🔥 SEM EFEITO DE HOVER NAS IMAGENS */
+img:hover {
+    transform: none !important;
+    scale: 1 !important;
 }
 
 header{
@@ -77,18 +129,15 @@ nav a {
     padding: 2rem;
     max-width: 1000px;
     margin: auto;
+    background-color: #eee;
 }
 
-.sobre:hover {
-    font-size: 20px;
-    transition: 1s;
-}
-    
 .projetos {
     padding: 2rem;
     max-width: 1000px;
     margin: auto;
     text-align: left;
+    background-color: #eee;
 }
 
 .grid-projetos{
@@ -106,11 +155,26 @@ nav a {
     max-width: 1000px;
     margin: auto;
     text-align: center;
+    background-color: #eee;
 }
 
-.contato:hover{
-    font-size: 20px;
-    transition: 1s;
+.contato, .contato * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    font-size: inherit !important;
+}
+
+.contato .nome-email {
+    font-size: 25px;
+    transition: transform 0.3s ease !important;
+}
+
+.contato .nome-email:hover {
+    transform: scale(1.25) !important;
+    font-size: 25px !important;
 }
 
 .card{
@@ -118,11 +182,13 @@ nav a {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 
+/* Removido aumento de padding */
 .card:hover{
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 @media screen and (max-width:768px){
@@ -182,4 +248,65 @@ nav a {
     .card {
         padding: 0.8rem;
     }
+}
+
+.sobre:hover, .sobre:hover *, .contato:hover, .contato:hover * {
+    font-size: inherit !important;
+}
+
+.projetos h2, .sobre .fixed-title {
+    font-family: inherit !important;
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: inherit !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.75rem 0 !important;
+    padding: 0 !important;
+    transition: none !important;
+    transform: none !important;
+    text-transform: none !important;
+}
+
+.sobre .fixed-title:hover,
+.sobre .fixed-title:focus,
+.sobre .fixed-title:active,
+.sobre .fixed-title * {
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: inherit !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.contato h2 {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.22s ease !important;
+}
+
+.contato:hover h2,
+.contato h2:hover {
+    transform: scale(1.08) !important;
+}
+
+/* 🔥 FUNDO ESCURO ZOOM */
+.imagem-ampliada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none;
+}
+
+/* 🔥 IMAGEM ZOOM */
+.imagem-ampliada img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
 }
