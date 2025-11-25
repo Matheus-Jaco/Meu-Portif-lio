@@ -61,7 +61,6 @@ ion-icon {
     transition: 0.5s;
 }
 
-/* 🔥 AQUI: IMAGEM CENTRALIZADA SEM ALTERAR O RESTO */
 .imagem {
     display: flex;
     justify-content: center;
@@ -77,7 +76,6 @@ ion-icon {
     max-width: 250px; /* Ajustável */
 }
 
-/* 🔥 FIXAÇÃO DAS IMAGENS APENAS NO SEU CAMPO */
 img {
     max-width: 100% !important;
     height: auto !important;
@@ -86,7 +84,6 @@ img {
     cursor: pointer;
 }
 
-/* 🔥 SEM EFEITO DE HOVER NAS IMAGENS */
 img:hover {
     transform: none !important;
     scale: 1 !important;
@@ -185,7 +182,6 @@ nav a {
     transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 
-/* Removido aumento de padding */
 .card:hover{
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -289,7 +285,6 @@ nav a {
     transform: scale(1.08) !important;
 }
 
-/* 🔥 FUNDO ESCURO ZOOM */
 .imagem-ampliada {
     position: fixed;
     top: 0;
@@ -304,7 +299,6 @@ nav a {
     display: none;
 }
 
-/* 🔥 IMAGEM ZOOM */
 .imagem-ampliada img {
     max-width: 90%;
     max-height: 90%;
